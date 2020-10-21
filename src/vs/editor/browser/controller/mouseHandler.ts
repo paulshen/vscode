@@ -373,7 +373,7 @@ class MouseDownOperation extends Disposable {
 		this._mouseState.isDragAndDrop = false;
 		this._dispatchMouse(position, e.shiftKey);
 
-		if (!this._isActive) {
+		if (!this._isActive && !e.metaKey) {
 			this._isActive = true;
 			this._mouseMoveMonitor.startMonitoring(
 				e.target,
